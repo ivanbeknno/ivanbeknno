@@ -3,10 +3,10 @@
 title: Улучшение коммуникации и эмпатия
 description:
 
-baseurl: "https://ivanbeknno.github.io" #name of GitHub repository
+baseurl: "" #name of GitHub repository
 url: "" #custom url to be used instead of GitHub repository
 email: #
-
+repository: ivanbeknno/ivanbeknno.github.io
 
 highlighter: rouge
 markdown: kramdown
