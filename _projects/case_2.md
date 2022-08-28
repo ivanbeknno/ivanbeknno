@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: case
 title: "Отзыв №2: Личная консултация"
 description: Рзбор конфликтной ситуации в коллективе
 published: true

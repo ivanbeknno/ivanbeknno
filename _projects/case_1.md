@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: case
 title: 'Отзыв №1: Личная консультация'
 description: Констультация по ситуации в личных отношениях
 published: true
