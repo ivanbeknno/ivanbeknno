@@ -5,6 +5,7 @@ profile:
   align: right
   image: profile.png
 published: true
+title: Улучшение коммуникации и эмпатия
 ---
 
 ### Чем я занимаюсь:
