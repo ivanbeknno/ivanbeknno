@@ -175,6 +175,11 @@ blockquote {
 .scroll::-webkit-scrollbar {
   display: none; }
 
+.navbar {
+  font-size: $big-font-size;
+  white-space: normal;
+}
+
 /*
   span.rev { unicode-bidi:bidi-override; direction:rtl }
   span.rev.surname:before { content:"вен" }
