@@ -24,4 +24,4 @@ published: true
 А так же на странице timepad:
 [ivanbek.timepad.ru](https://ivanbek.timepad.ru/ "Анонсы на Timepad")
 
-![alt text for screen readers](/assets/images/mc-photo-vse-cut-small.png "Text to show on mouseover")
+![Фото с мастер-класса](/assets/images/mc-photo-vse-cut-small.png "Фото с мастер-класса")
