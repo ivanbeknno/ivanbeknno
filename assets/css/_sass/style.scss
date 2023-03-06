@@ -106,9 +106,19 @@ blockquote {
   font-style: italic;
 }
 
+.headline, .site-headline {
+  font-size: 2em;
+  margin-bottom: -0.4em;
+	line-height: 1em;
+
+  @include media-query($on-palm) {
+    font-size: 2em;
+  }
+}
 
 .headline, .post-headline {
-  font-size: 2em;
+//  font-size: 2em;
+  font-size: 1.7em;
   margin-bottom: -0.4em;
 	line-height: 1em;
 
