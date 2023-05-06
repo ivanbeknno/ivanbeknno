@@ -2,7 +2,7 @@
 title:
 layout: default
 permalink: /life/
-published: true
+published: false
 ---
 
 Я провожу живые (оффлайн) мероприятия, можете их посетить.
