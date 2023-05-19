@@ -6,6 +6,7 @@ layout: default
   {% for post in paginator.posts %}
     <h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
     <p>{{post.excerpt}} <p><a href="{{ post.url }}">(Читать полноcтью...)</a></p>
+    <hr>
   {% endfor %}
 </div>
 
@@ -35,5 +36,3 @@ layout: default
   {% endif %}
 </div>
 {% endif %}
-
-<hr>
