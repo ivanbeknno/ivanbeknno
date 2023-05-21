@@ -13,9 +13,9 @@ highlighter: rouge
 markdown: kramdown
 
 # Pagination
-paginate: 4
+paginate: 20
 permalink: /blog/:year/:title/
-paginate_path: /blog/page:num/
+paginate_path: /blog/:num/
 
 # Social media links in footer
 facebook: #
