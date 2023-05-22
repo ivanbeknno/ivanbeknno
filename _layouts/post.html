@@ -3,8 +3,15 @@ layout: default
 ---
 <hr>
 <h2 class="post-headline">{{page.title}}</h2>
+<p><table width="62%"><tr><td class="meta"><small>{{page.date | date: '%B %d, %Y'}}</small></td>
+<td class="meta"><small>
+  {% if page.upd_date %}
+      изменено: {{ page.upd_date | date: '%B %d, %Y' }}
+  {% else %}
+  {% endif %}
+</small></td></tr></table></p>
 
-<p class="meta"><small>{{page.date | date: '%B %d, %Y'}}</small></p>
+
 
 {{content}}
 
