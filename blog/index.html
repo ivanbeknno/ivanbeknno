@@ -6,7 +6,7 @@ layout: default
   {% for post in paginator.posts %}
     <h2><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
     <p>{{post.excerpt}}</p>
-    <a href="{{ post.url }}">(Читать полноcтью...)</a>
+    <a href="{{ post.url }}">👓 Читать полноcтью...</a>
     <!--
     <table width="85%"><tr><td><a href="{{ post.url }}">(Читать полноcтью...)</a></td><td align="right" class="meta"><small>{{post.date | date: '%B %d, %Y'}}</small></td></tr></table>
     -->
