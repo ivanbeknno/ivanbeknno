@@ -1,6 +1,7 @@
 ---
 title: Отзывы
 layout: default
+description: "Отзывы по личным консултьтациям по улучшению взаимопонимания в отношениях"
 permalink: /cases/
 published: true
 ---

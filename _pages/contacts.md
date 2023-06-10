@@ -1,6 +1,7 @@
 ---
 title:
 layout: default
+description: "Мои контакты"
 permalink: /contacts/
 published: true
 ---

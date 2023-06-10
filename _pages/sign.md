@@ -1,6 +1,7 @@
 ---
 title:
 layout: default
+description: "Запись на личные консультации по улучшению взаимопонимания и разрешению конфликтов в отношениях и в коллективе"
 permalink: /sign/
 published: true
 ---

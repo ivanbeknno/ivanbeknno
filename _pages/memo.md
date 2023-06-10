@@ -1,6 +1,7 @@
 ---
 title:
 layout: default
+description: "Полезные памятки и ссылки для взаимопонимания"
 permalink: /memo/
 published: true
 ---
