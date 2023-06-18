@@ -1,0 +1,8 @@
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
+Sitemap: {{ "sitemap.xml" | absolute_url }}
+
+# You can send me your nudes 👙
