@@ -1,5 +1,5 @@
 ---
-title:
+title: 📞 Контакты
 layout: default
 description: "Мои контакты"
 permalink: /contacts/
