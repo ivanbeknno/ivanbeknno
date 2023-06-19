@@ -21,15 +21,16 @@ layout: compress
 
     </head>
 
-    <h1 class="site-headline">{{site.title}}</h1>
-
-    <br>
-
-    <h3 class="post-description">{{site.description}}</h3>
-
-    {% include navigation.html %}
-
     <body>
+
+      <h1 class="site-headline">{{site.title}}</h1>
+
+      <br>
+
+      <h3 class="post-description">{{site.description}}</h3>
+
+      {% include navigation.html %}
+
         <main>
             <article>
                 {{ content }}
