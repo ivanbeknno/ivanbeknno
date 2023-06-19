@@ -9,6 +9,8 @@ url: "https://ivanbek.ru" #custom url to be used instead of GitHub repository
 email: #
 repository: ivanbeknno/ivanbeknno.github.io
 
+locale: "ru_RU"
+
 highlighter: rouge
 markdown: kramdown
 
