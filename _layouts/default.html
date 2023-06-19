@@ -9,13 +9,6 @@ layout: compress
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-        <h1 class="site-headline">{{site.title}}</h1>
-
-        <br>
-
-        <h3 class="post-description">{{site.description}}</h3>
-
-        {% include navigation.html %}
 
         {% seo %}
 
@@ -27,6 +20,14 @@ layout: compress
         <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
 
     </head>
+
+    <h1 class="site-headline">{{site.title}}</h1>
+
+    <br>
+
+    <h3 class="post-description">{{site.description}}</h3>
+
+    {% include navigation.html %}
 
     <body>
         <main>
