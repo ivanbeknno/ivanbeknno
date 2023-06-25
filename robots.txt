@@ -3,6 +3,8 @@ layout: null
 sitemap:
   exclude: 'yes'
 ---
+User-agent: *
+Allow: /
 Sitemap: {{ "sitemap.xml" | absolute_url }}
 
 # You can send me your nudes 👙🍑🍒
