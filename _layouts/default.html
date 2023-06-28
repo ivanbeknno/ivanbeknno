@@ -5,6 +5,7 @@ layout: null
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 
     <head>
+        {% if page.sitemap.exclude == "yes" %}<meta name="robots" content="noindex">{% endif %}
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
 
