@@ -2,6 +2,7 @@
 layout: post
 title: "Переживать эмоции - не тоже самое, что предполагать их"
 date:   2023-07-31
+permalink: "/blog/2023/empathy-vs-analysis/"
 published: true
 ---
 Компьютер может различать эмоции по интонации голоса.\

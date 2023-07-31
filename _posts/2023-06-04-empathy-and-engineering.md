@@ -2,6 +2,7 @@
 layout: post
 title: "Эмпатия и Инженерный подход"
 date:   2023-06-04
+permalink: "/blog/2023/empathy-and-engineering/"
 published: true
 ---
 Я научился программировать в школе, по самоучителю, и мог писать простые игры.\

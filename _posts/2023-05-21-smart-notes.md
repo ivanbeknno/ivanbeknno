@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Объяснение связи между идеями в заметках повышает пользу от заметок"
+date: 2023-05-21
+permalink: "/blog/2023/smart-notes/"
 published: true
 upd_date: 2023-05-22
 ---

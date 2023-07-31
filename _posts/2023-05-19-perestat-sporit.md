@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Как перестать спорить"
+date: 2023-05-19
+permalink: "/blog/2023/perestat-sporit/"
 published: true
 ---
 Люди спорят о том, что делать, а что не делать.\

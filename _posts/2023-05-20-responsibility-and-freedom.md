@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Принятие ответственности за свои чувства, поступки и мысли дает свободу, и уменьшает страдания"
+date: 2023-05-20
+permalink: "/blog/2023/responsibility-and-freedom/"
 published: true
 ---
 

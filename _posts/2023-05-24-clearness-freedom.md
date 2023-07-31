@@ -2,6 +2,7 @@
 layout: post
 title: "Понимание чего я хочу, дает свободу действовать"
 date:   2023-05-24
+permalink: "/blog/2023/clearness-freedom/"
 published: true
 ---
 Если я осознаю свои желания - я могу делать выбор.\

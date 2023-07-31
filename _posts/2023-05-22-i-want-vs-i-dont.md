@@ -2,6 +2,7 @@
 layout: post
 title: "Понимание \"Чего я хочу\" дает больше шансов получить желаемое, чем фокус на том, \"Чего я НЕ хочу\""
 date:   2023-05-22
+permalink: "/blog/2023/i-want-vs-i-dont/"
 published: true
 ---
 

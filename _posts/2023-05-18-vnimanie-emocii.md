@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Почему важно отслеживать чувства"
+date: 2023-05-21
+permalink: "/blog/2023/vnimanie-emocii/"
 published: true
 ---
 Эмоции и чувства указывают на потребности.\
