@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Почему важно отслеживать чувства"
-date: 2023-05-21
+date: 2023-05-18
 permalink: "/blog/2023/vnimanie-emocii/"
 published: true
 ---
