@@ -18,11 +18,18 @@ layout: default
 
 {{content}}
 
+<hr>
+
+<p><small> Если вам нравятся мои посты, и вы хотите помочь мне сделать блог лучше,
+  <br>пожалуйста, оставьте
+  <b><a href="https://docs.google.com/forms/d/e/1FAIpQLSewVqwvSpXbR_aBf43fW9dMtb_tkTm8eW90JSv0cXazK0a_FQ/viewform?usp=pp_url&entry.1173564305={{ page.url | url_encode }}">
+    отзыв на пост по этой ссылке
+  </a></b>
+</small></p>
+
 <!-- Comments only for posts -->
 {% if page.path contains '_posts' %}
     {% if site.disqus-shortname %}
         {% include disqus.html %}
     {% endif %}
 {% endif %}
-
-<hr>
