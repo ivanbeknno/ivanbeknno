@@ -10,6 +10,7 @@ email: #
 repository: ivanbeknno/ivanbeknno.github.io
 
 locale: "ru_RU"
+timezone: Europe/Moscow
 
 highlighter: rouge
 markdown: kramdown
