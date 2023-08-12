@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Гнев и что мы с ним делаем
-date:  2023-08-11
+date:  2023-08-12
 published: true
 ---
 Гнев может быть:
