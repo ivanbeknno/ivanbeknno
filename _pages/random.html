@@ -11,32 +11,40 @@ sitemap:
 
     <head>
 
-        <script>
-        var comingFromPost = document.referrer;
+      <script>
+
+
+          const allPosts = [{% for post in site.posts %}"{{ post.url }}"{% unless post.previous == nil %},{% endunless %}{% endfor %}];
 
         function linkToRandomBlogPost() {
-        	var allPosts = [{% for post in site.posts %}
-              "{{ post.url }}"{% unless post.previous == nil %},{% endunless %}
-        	}
-            {% endfor %}];
+            let lastRandomPostLink = sessionStorage.getItem("lastRandomPostLink");
 
-        var i = 0;
-        do {
-        	var randomPostLink = allPosts[Math.floor(Math.random() * allPosts.length)]; i++;}
-        while (comingFromPost.includes(randomPostLink) || i > 10)
+            if (!lastRandomPostLink) {
 
-        if (i > 10 && comingFromPost !== '/blog/Getting-Random-Post-in-Jekyll') {
-        	randomPostLink = '/blog/Getting-Random-Post-in-Jekyll';}
+              let randomPostLink = allPosts[Math.floor(Math.random() * allPosts.length)];
+              sessionStorage.setItem("lastRandomPostLink", randomPostLink);
+              return randomPostLink;
+            } else {
 
-        if (i > 10 && comingFromPost === '/blog/Getting-Random-Post-in-Jekyll') {
-        	randomPostLink = '/blog/Creating-a-Tag-Page-with-Jekyll'
-        	}
+                let updatedPostList = [];
+                let i = 0;
 
-        return randomPostLink;
+                do
+                  if (allPosts[i] === lastRandomPostLink) {
+                    i++;
+                  } else {
+                    updatedPostList.push(allPosts[i]);
+                    i++
+                  }
+                while (i < allPosts.length)
+
+                let randomPostLink = updatedPostList[Math.floor(Math.random() * updatedPostList.length)];
+                sessionStorage.setItem("lastRandomPostLink", randomPostLink);
+                return randomPostLink;
+            }
         }
 
         location.replace(linkToRandomBlogPost())
-
-        </script>
+      </script>
 
     </head>
