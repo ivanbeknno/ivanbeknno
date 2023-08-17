@@ -17,7 +17,17 @@ layout: default
 
 {{content}}
 
-<hr>
+<div class="PageNavigation">
+  {% if page.previous.url %}
+    <!-- <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a> -->
+    <a class="prev" href="{{page.previous.url}}">◀ Предыдущий</a>
+  {% endif %}
+  | <a href="{{site.baseurl}}/random/">Случайный 🍀</a> |
+  {% if page.next.url %}
+    <!-- <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a> -->
+    <a class="next" href="{{page.next.url}}">Следующий ▶</a>
+  {% endif %}
+</div>
 
 <p><small> Если вам нравятся мои посты, и вы хотите помочь мне сделать блог лучше,
   <br>пожалуйста, оставьте
@@ -26,17 +36,7 @@ layout: default
   </a></b>
 </small></p>
 
-<div class="PageNavigation">
-  {% if page.previous.url %}
-    <!-- <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a> -->
-    <a class="prev" href="{{page.previous.url}}">◀ Предыдущий</a>
-  {% endif %}
-  | 
-  {% if page.next.url %}
-    <!-- <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a> -->
-    <a class="next" href="{{page.next.url}}">Следующий ▶</a>
-  {% endif %}
-</div>
+<hr>
 
 <!-- Comments only for posts -->
 {% if page.path contains '_posts' %}
