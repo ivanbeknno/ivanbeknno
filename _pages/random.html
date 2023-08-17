@@ -1,7 +1,7 @@
 ---
 title:
 layout: null
-permalink: /random/
+permalink: /rnd/
 published: true
 sitemap:
   exclude: 'yes'
@@ -12,9 +12,7 @@ sitemap:
     <head>
 
       <script>
-
-
-          const allPosts = [{% for post in site.posts %}"{{ post.url }}"{% unless post.previous == nil %},{% endunless %}{% endfor %}];
+        const allPosts = [{% for post in site.posts %}"{{ post.url }}"{% unless post.previous == nil %},{% endunless %}{% endfor %}];
 
         function linkToRandomBlogPost() {
             let lastRandomPostLink = sessionStorage.getItem("lastRandomPostLink");
