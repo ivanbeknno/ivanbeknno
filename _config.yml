@@ -54,6 +54,9 @@ sass:
   sass_dir: /assets/css/_sass
   style: compressed
 
+feed:
+  path: /feed.atom
+
 include:
   - _pages
 
@@ -67,4 +70,3 @@ plugins:
   - jekyll-email-protect
   - jekyll-target-blank
   - jekyll-feed
-  
