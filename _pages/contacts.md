@@ -4,6 +4,8 @@ layout: default
 description: "Мои контакты"
 permalink: /contacts/
 published: true
+sitemap:
+  exclude: 'yes'
 ---
 ## 📞Как со мной связаться
 
