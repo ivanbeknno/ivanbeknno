@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Попытки утешать редко кого-то утешают
+title: Попытки утешать
 date:  2023-08-31
 published: true
 ---
