@@ -48,3 +48,18 @@ layout: default
         {% include disqus.html %}
     {% endif %}
 {% endif %}
+
+<style>
+    .hidden {
+      display:none;
+    }
+</style>
+<section class="hidden">
+  <div class="post">
+      <h2><a class="post-list-title" href="{{ page.url }}">{{ page.title }}</a></h2>
+      <div class="post-content">
+        {{ content }}
+      </div>
+      <hr>
+  </div>
+</section>

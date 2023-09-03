@@ -1,0 +1,23 @@
+---
+layout: default
+permalink: /test-inf/
+sitemap:
+  exclude: 'yes'
+---
+<hr>
+<div class="archive tag-master">
+	<div class="post-list article-list">
+	{% for post in site.posts limit: 10 %}
+		<div class="post">
+			<h2><a class="post-list-title article-list" href="{{ post.url }}">{{ post.title }}</a></h2>
+      <div class="post-content">
+          {{ post.content }}
+      </div>
+      <hr>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+<script src="{{site.baseurl}}/assets/js/jquery-3.2.1.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/infinite-jekyll.js"></script>
+<div class="infinite-spinner"></div>
