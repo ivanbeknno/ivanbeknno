@@ -1,5 +1,5 @@
 $(function() {
-  
+
   var postURLs,
       isFetchingPosts = false,
       shouldFetchPosts = true;
@@ -37,14 +37,15 @@ $(function() {
   // Are we close to the end of the page? If we are, load more posts
   $(window).scroll(function(e){
     if (!shouldFetchPosts || isFetchingPosts) return;
-
     var windowHeight = $(window).height(),
         windowScrollPosition = $(window).scrollTop(),
         bottomScrollPosition = windowHeight + windowScrollPosition,
         documentHeight = $(document).height();
 
+    //console.log($(window).scrollTop() + window.innerHeight, $(document).height(), window.innerHeight);
+    
     // If we've scrolled past the loadNewPostsThreshold, fetch posts
-    if ((documentHeight - loadNewPostsThreshold) < bottomScrollPosition) {
+    if ($(window).scrollTop() + window.innerHeight == $(document).height()) {
       fetchPosts();
     }
   });
@@ -87,11 +88,11 @@ $(function() {
       callback();
     });
   }
-  
+
   function disableFetching() {
     shouldFetchPosts = false;
     isFetchingPosts = false;
     $(".infinite-spinner").fadeOut();
   }
-	
+
 });
