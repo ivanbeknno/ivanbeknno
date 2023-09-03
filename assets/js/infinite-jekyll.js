@@ -37,15 +37,17 @@ $(function() {
   // Are we close to the end of the page? If we are, load more posts
   $(window).scroll(function(e){
     if (!shouldFetchPosts || isFetchingPosts) return;
-    var windowHeight = $(window).height(),
+    /*var windowHeight = $(window).height(),
         windowScrollPosition = $(window).scrollTop(),
         bottomScrollPosition = windowHeight + windowScrollPosition,
-        documentHeight = $(document).height();
+        documentHeight = $(document).height();*/
+    var fetch = ( $(window).scrollTop() + $(window).height() ) > ( $(document).height() - ($(window).height() / 2) )
 
     //console.log($(window).scrollTop() + window.innerHeight, $(document).height(), window.innerHeight);
-    
+    //$(window).scrollTop() + window.innerHeight == $(document).height()
+
     // If we've scrolled past the loadNewPostsThreshold, fetch posts
-    if ($(window).scrollTop() + window.innerHeight == $(document).height()) {
+    if (fetch) {
       fetchPosts();
     }
   });
