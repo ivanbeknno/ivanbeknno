@@ -1,0 +1,10 @@
+url: "http://192.168.1.71:4000" #custom url to be used for dev
+baseurl: ""
+
+# Accepts connections on port 4000 from any source
+host: 0.0.0.0
+port: 4000
+
+# Don't compress SASS output
+sass:
+  style: full
