@@ -3,6 +3,7 @@ layout: post
 title: Страх узнать правду
 date:  2023-08-19
 published: true
+eng: /blog/2023/08/fear-of-knowing-the-truth/
 ---
 Страх знать правду мешает говорить о том, что важно,\
 узнавать то, что нужно знать.\
