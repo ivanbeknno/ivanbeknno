@@ -4,4 +4,5 @@ _site/
 .jekyll-cache
 .run.txt
 .run.bat
+.Gemfile.lock
 assets/images/others
