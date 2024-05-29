@@ -22,4 +22,4 @@ published: true
 Нужна некоторая внимательность, чтобы пока выбираешь что-то что лучше, не выбрать в итоге страх и сожаления.
 
 А вот видео хорошее на тему счастья и выбора:\
-https://www.youtube.com/watch?v=vE8yhEhbGLE
+<https://www.youtube.com/watch?v=vE8yhEhbGLE>
