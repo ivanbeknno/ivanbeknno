@@ -1,3 +1,4 @@
+**/*.DS_Store
 _site/
 .sass-cache/
 .jekyll-metadata
@@ -6,3 +7,7 @@ _site/
 .run.bat
 Gemfile.lock
 assets/images/others
+__new-posts/queue
+/python
+*.log
+*.py
