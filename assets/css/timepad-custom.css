@@ -1,133 +1,215 @@
-/* Custom TimePad Widget Styling */
+/* Custom styles for TimePad widget with beige theme */
 
-/* Main backgrounds and containers */
+/* Base colors */
+:root {
+  --beige-light: #F5F5DC;
+  --beige-medium: #DEB887;
+  --beige-dark: #8B4513;
+  --text-dark: #4A4A4A;
+  --text-light: #FFFFFF;
+  --accent: #A0522D;
+}
+
+/* Main layout */
 body {
-  background-color: #F8F7F3 !important;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--beige-light);
 }
 
-.b-pro-wiget {
-  background-color: #FFF !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Header styles */
-.b-widget-header {
-  background-color: #F8F7F3 !important;
-}
-
-.b-widget-header__heading {
-  color: #444 !important;
-}
-
-.b-header__main {
-  background-color: #FFF !important;
-  border-bottom: 2px solid #E8E6E1;
-}
-
-/* Button styles - preserving behavior but updating colors */
-.b-pro-wiget__button,
-.b-pro-wiget__reg-button,
-.b-pro-wiget__pay-button {
-  background-color: #4A90E2 !important;
-  color: white !important;
-  transition: background-color 0.3s ease;
-  border-radius: 3px;
-  font-weight: bold;
-  border: none !important;
-}
-
-.b-pro-wiget__button:hover,
-.b-pro-wiget__reg-button:hover,
-.b-pro-wiget__pay-button:hover {
-  background-color: #357ABD !important;
-}
-
-.b-pro-wiget__button:active,
-.b-pro-wiget__reg-button:active,
-.b-pro-wiget__pay-button:active {
-  background-color: #2868A9 !important;
-  box-shadow: inset 0 0 7px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* More button with lighter style */
-.b-pro-wiget__more-button {
-  border: 1px solid #D1D1D1;
-  color: #666 !important;
-  background-color: transparent;
-  transition: all 0.3s ease;
-}
-
-.b-pro-wiget__more-button:hover {
-  background-color: #F0F0F0;
-  color: #444 !important;
+/* Links styling */
+a, a:hover {
+  transition: none !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  color: var(--beige-dark);
 }
 
 /* Address block */
 .b-adress-block {
-  background-color: #FFF !important;
-  border-bottom: 2px solid #E8E6E1;
-  color: #666;
+  background-color: var(--text-light);
+  font-size: 14px;
+  color: var(--text-dark);
+  padding: 37px 35px;
+  text-align: center;
+  margin-top: 33px;
+  padding-top: 0;
+  border-radius: 2px;
+  border-bottom: 2px solid var(--beige-medium);
 }
 
-/* Footer styling */
-.b-footer {
-  background-color: #F8F7F3 !important;
-}
-
-.b-footer__branding {
-  color: #4A90E2 !important;
-}
-
-/* Text colors */
+/* Event header */
 .b-event-header {
-  color: #333 !important;
+  font-size: 24px !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+  color: var(--text-dark);
+  font-weight: bold;
+  text-align: center;
 }
 
+/* Pro widget container */
+.b-pro-wiget {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 1px;
+  background-color: var(--text-light);
+  margin-bottom: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.b-header__main {
+  float: right;
+  position: relative;
+  background-color: var(--text-light);
+  border-radius: 2px;
+  border-bottom: 2px solid var(--beige-medium);
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.b-header__center {
+  font-size: .85em !important;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-align: center;
+  height: 30px;
+}
+
+/* Widget header */
+.b-widget-header {
+  position: relative;
+  padding: 15px 20px;
+  min-height: 28px;
+  background-color: var(--beige-light);
+}
+
+.b-widget-header__heading {
+  font-size: 12px;
+  line-height: 1.666em;
+  color: var(--text-dark);
+}
+
+/* Footer */
+.b-footer {
+  box-sizing: border-box;
+  padding: 15px 0;
+  margin-bottom: 10px;
+  background-color: var(--beige-light);
+  text-align: center;
+}
+
+/* Buttons */
+.b-pro-wiget__button {
+  font-weight: bold;
+  background-color: var(--beige-dark);
+  text-decoration: none !important;
+  display: inline-block;
+  border: none !important;
+  color: var(--text-light) !important;
+  border-radius: 3px;
+  line-height: 1;
+  font-family: "HelveticaNeue", HelveticaNeue, Arial, sans-serif;
+}
+
+.b-pro-wiget__button:hover {
+  background-color: var(--accent) !important;
+}
+
+.b-pro-wiget__reg-button, 
+.b-pro-wiget__pay-button {
+  font-size: 18px;
+  padding: 13px 17px;
+  background-color: var(--beige-dark);
+  color: var(--text-light);
+}
+
+/* More button */
+.b-pro-wiget__more-button {
+  border-radius: 3px;
+  display: inline-block;
+  line-height: 1;
+  margin-top: .8em;
+  padding: 7px 8px;
+  font-size: .85em;
+  color: var(--text-dark);
+  background-color: transparent;
+  border: 1px solid var(--beige-medium);
+}
+
+.b-pro-wiget__more-button:hover {
+  color: var(--text-light);
+  background-color: var(--beige-medium);
+  transition: .4s !important;
+}
+
+/* Description sections */
 .b-description {
-  color: #444;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 40px;
+  background-color: var(--text-light);
 }
 
-/* Date and time */
+.b-short-description {
+  margin: 5px 0;
+  font-size: 12px;
+  line-height: 1.666em;
+  color: var(--text-dark);
+}
+
+/* Date display */
 .b-pro-wiget__date {
-  color: #666 !important;
-}
-
-/* Links */
-a {
-  color: #4A90E2 !important;
-}
-
-a:hover {
-  color: #357ABD !important;
-}
-
-/* Calendar icons and header strips - keeping functionality but updating colors */
-.b-header__strip-left,
-.b-header__strip-right {
-  background-color: #F8F7F3 !important;
+  margin-top: -5px;
+  text-align: left;
+  font-size: .85em;
+  color: var(--text-dark);
 }
 
 /* No events message */
 .b-no-events {
-  background-color: #FFF !important;
-  border: 1px solid #E8E6E1;
-  color: #666;
+  border: 1px solid var(--beige-medium);
+  border-radius: 1px;
+  padding: 18px 0 105px;
+  position: relative;
+  font-size: 1em;
+  color: var(--text-dark);
+  text-align: center;
+  background-color: var(--text-light);
 }
 
-/* Widget borders and shadows */
-.b-pro-wiget,
-.b-adress-block,
-.b-header__main {
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+/* Strips and decorative elements */
+.b-header__strip-left,
+.b-header__strip-right {
+  min-height: 25px;
+  background-color: var(--beige-medium);
 }
 
-/* Background hover effects */
-.b-aphisha:hover .b-aphisha__heading {
-  opacity: 0.9;
+.b-footer__strip {
+  min-height: 25px;
+  text-align: center;
+  background-color: var(--beige-medium);
 }
 
-/* Responsive adjustments */
+/* Branding */
+.b-footer__branding {
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--beige-dark);
+}
+
+/* Hover effects */
+a:hover,
+.b-footer__branding:hover {
+  color: var(--accent);
+  opacity: 0.85;
+  transition: .2s !important;
+}
+
+/* responsive adjustments */
 @media (max-width: 768px) {
   .b-pro-wiget {
     margin: 10px;
