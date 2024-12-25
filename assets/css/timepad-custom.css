@@ -1,169 +1,139 @@
-/* TimePad Widget Custom Styles */
+/* Custom TimePad Widget Styling */
 
-/* Base colors and variables */
-:root {
-  --background-color: beige;
-  --text-color: #333333;
-  --border-color: #DEB887;
-  --heading-color: #8B4513;
-  --link-color: #A0522D;
-  --button-color: #8B4513;
-  --accent-color: #D2691E;
-  --hover-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Core elements */
+/* Main backgrounds and containers */
 body {
-  background-color: var(--background-color) !important;
-  -webkit-font-smoothing: antialiased;
+  background-color: #F8F7F3 !important;
 }
 
-/* Links */
-a, 
-a:hover {
-  color: var(--link-color) !important;
-  text-decoration: none !important;
-  transition: color 0.3s ease !important;
-}
-
-/* Widget container */
 .b-pro-wiget {
-  background-color: var(--background-color) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: 4px !important;
-  margin-bottom: 20px !important;
+  background-color: #FFF !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Header styles */
+.b-widget-header {
+  background-color: #F8F7F3 !important;
+}
+
+.b-widget-header__heading {
+  color: #444 !important;
+}
+
 .b-header__main {
-  background-color: var(--background-color) !important;
-  border-bottom: 2px solid var(--border-color) !important;
+  background-color: #FFF !important;
+  border-bottom: 2px solid #E8E6E1;
 }
 
-.b-event-header {
-  color: var(--heading-color) !important;
-  font-size: 24px !important;
-  font-weight: bold !important;
-}
-
-/* Address block */
-.b-adress-block {
-  background-color: #FAEBD7 !important;
-  border-bottom: 2px solid var(--border-color) !important;
-  color: var(--text-color) !important;
-}
-
-/* Description area */
-.b-description {
-  background-color: #FAEBD7 !important;
-  color: var(--text-color) !important;
-}
-
-/* Date display */
-.b-pro-wiget__date {
-  color: var(--text-color) !important;
-}
-
-/* Buttons */
+/* Button styles - preserving behavior but updating colors */
 .b-pro-wiget__button,
 .b-pro-wiget__reg-button,
 .b-pro-wiget__pay-button {
-  background-color: var(--button-color) !important;
+  background-color: #4A90E2 !important;
   color: white !important;
+  transition: background-color 0.3s ease;
+  border-radius: 3px;
+  font-weight: bold;
   border: none !important;
-  border-radius: 3px !important;
-  transition: background-color 0.3s ease !important;
 }
 
 .b-pro-wiget__button:hover,
 .b-pro-wiget__reg-button:hover,
 .b-pro-wiget__pay-button:hover {
-  background-color: var(--link-color) !important;
+  background-color: #357ABD !important;
 }
 
-/* More button */
+.b-pro-wiget__button:active,
+.b-pro-wiget__reg-button:active,
+.b-pro-wiget__pay-button:active {
+  background-color: #2868A9 !important;
+  box-shadow: inset 0 0 7px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* More button with lighter style */
 .b-pro-wiget__more-button {
-  border: 1px solid var(--border-color) !important;
-  color: var(--text-color) !important;
-  background-color: transparent !important;
+  border: 1px solid #D1D1D1;
+  color: #666 !important;
+  background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 .b-pro-wiget__more-button:hover {
-  background-color: var(--border-color) !important;
-  color: white !important;
+  background-color: #F0F0F0;
+  color: #444 !important;
 }
 
-/* Header */
-.b-widget-header {
-  background-color: var(--background-color) !important;
+/* Address block */
+.b-adress-block {
+  background-color: #FFF !important;
+  border-bottom: 2px solid #E8E6E1;
+  color: #666;
 }
 
-.b-widget-header__heading {
-  color: var(--heading-color) !important;
-}
-
-/* Footer */
+/* Footer styling */
 .b-footer {
-  background-color: var(--background-color) !important;
-  color: var(--text-color) !important;
+  background-color: #F8F7F3 !important;
 }
 
-/* Calendar icons and visual elements */
-.b-clock-icon,
-.b-pro-wiget__calendar i {
-  opacity: 0.8;
+.b-footer__branding {
+  color: #4A90E2 !important;
 }
 
-/* Empty state */
+/* Text colors */
+.b-event-header {
+  color: #333 !important;
+}
+
+.b-description {
+  color: #444;
+}
+
+/* Date and time */
+.b-pro-wiget__date {
+  color: #666 !important;
+}
+
+/* Links */
+a {
+  color: #4A90E2 !important;
+}
+
+a:hover {
+  color: #357ABD !important;
+}
+
+/* Calendar icons and header strips - keeping functionality but updating colors */
+.b-header__strip-left,
+.b-header__strip-right {
+  background-color: #F8F7F3 !important;
+}
+
+/* No events message */
 .b-no-events {
-  background-color: #FAEBD7 !important;
-  border: 1px solid var(--border-color) !important;
-  color: var(--text-color) !important;
+  background-color: #FFF !important;
+  border: 1px solid #E8E6E1;
+  color: #666;
 }
 
-/* Hover states */
-.b-pro-wiget__more-block .b-pro-wiget__more-button:hover {
-  background-color: var(--hover-color) !important;
+/* Widget borders and shadows */
+.b-pro-wiget,
+.b-adress-block,
+.b-header__main {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Background hover effects */
+.b-aphisha:hover .b-aphisha__heading {
+  opacity: 0.9;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .b-pro-wiget {
-    margin: 10px !important;
+    margin: 10px;
   }
   
   .b-description {
-    padding: 15px !important;
+    padding: 15px;
   }
-}
-
-/* Additional elements */
-.b-breadcrumbs {
-  color: var(--accent-color) !important;
-}
-
-.b-breadcrumbs:hover {
-  background: var(--hover-color) !important;
-}
-
-.b-footer__branding {
-  color: var(--text-color) !important;
-}
-
-.b-footer__other-url {
-  color: var(--link-color) !important;
-}
-
-/* Top level containers */
-.b-main.b-main_type_feed {
-  background-color: var(--background-color) !important;
-}
-
-/* Widget header specific */
-.b-widget-header__date-choice {
-  border-color: var(--border-color) !important;
-}
-
-.b-widget-header__date-choice:hover {
-  background-color: var(--hover-color) !important;
 }
