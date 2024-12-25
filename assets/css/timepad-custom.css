@@ -1,23 +1,144 @@
-.tp-widget-widget {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    max-width: 100% !important;
-    margin: 2rem auto !important;
-    color: #333 !important;
+/* Custom styles for TimePad widget with beige color scheme */
+
+/* Main background and container */
+body {
+  background-color: #F5F5DC !important; /* Beige background */
 }
 
-.tp-widget-widget button,
-.tp-widget-widget .btn,
-.tp-widget-widget .btn-primary {
-    background-color: #4a4a4a !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 4px !important;
+.b-pro-wiget {
+  background-color: #F5F5DC !important;
+  border: 1px solid #DEB887;
 }
 
-.tp-widget-widget input,
-.tp-widget-widget select,
-.tp-widget-widget textarea {
-    border: 1px solid #ddd !important;
-    border-radius: 4px !important;
-    padding: 8px !important;
+/* Header styles */
+.b-widget-header {
+  background-color: #DEB887 !important; /* Darker beige for header */
+  color: #4A4A4A;
+}
+
+.b-widget-header__heading {
+  color: #4A4A4A !important;
+}
+
+/* Event list background */
+.b-main.b-main_type_feed {
+  background-color: #F5F5DC !important;
+}
+
+/* Event block styles */
+.b-pro-wiget {
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Description block */
+.b-description {
+  background-color: #FAEBD7 !important; /* Antique white for content areas */
+  color: #4A4A4A;
+}
+
+/* Footer styles */
+.b-footer {
+  background-color: #DEB887 !important;
+  color: #4A4A4A;
+}
+
+/* Link colors */
+a, .b-pro-wiget a {
+  color: #8B4513 !important; /* Saddle brown for links */
+}
+
+a:hover, .b-pro-wiget a:hover {
+  color: #A0522D !important;
+}
+
+/* Buttons */
+.b-pro-wiget__button,
+.b-pro-wiget__reg-button,
+.b-pro-wiget__pay-button {
+  background-color: #8B4513 !important; /* Saddle brown for buttons */
+  color: #FFF !important;
+  border: none;
+}
+
+.b-pro-wiget__button:hover,
+.b-pro-wiget__reg-button:hover,
+.b-pro-wiget__pay-button:hover {
+  background-color: #A0522D !important;
+}
+
+/* Address block */
+.b-adress-block {
+  background-color: #FAEBD7 !important;
+  border-bottom: 2px solid #DEB887;
+}
+
+/* Header strips */
+.b-header__strip-left,
+.b-header__strip-right {
+  background-color: #DEB887 !important;
+}
+
+/* Event header */
+.b-event-header {
+  color: #4A4A4A !important;
+}
+
+/* Date text */
+.b-pro-wiget__date {
+  color: #8B4513 !important;
+}
+
+/* More button */
+.b-pro-wiget__more-button {
+  border: 1px solid #DEB887;
+  color: #8B4513 !important;
+}
+
+.b-pro-wiget__more-button:hover {
+  background-color: #DEB887;
+  color: #FFF !important;
+}
+
+/* No events message */
+.b-no-events {
+  background-color: #FAEBD7 !important;
+  border: 1px solid #DEB887;
+}
+
+/* Calendar icons */
+.b-clock-icon,
+.b-pro-wiget__calendar i {
+  filter: sepia(1);
+}
+
+/* Main heading */
+.b-header__main {
+  background-color: #FAEBD7 !important;
+  border-bottom: 2px solid #DEB887;
+}
+
+/* Widget borders and shadows */
+.b-pro-wiget,
+.b-adress-block,
+.b-header__main {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(139, 69, 19, 0.1);
+}
+
+/* Branding section */
+.b-footer__branding {
+  color: #8B4513 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .b-pro-wiget {
+    margin: 10px;
+  }
+  
+  .b-description {
+    padding: 15px;
+  }
 }
