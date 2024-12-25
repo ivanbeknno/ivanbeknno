@@ -1,70 +1,157 @@
-/* Custom styles for TimePad widget with beige theme */
-
-/* Base colors */
-:root {
-  --beige-light: #F5F5DC;
-  --beige-medium: #DEB887;
-  --beige-dark: #8B4513;
-  --text-dark: #4A4A4A;
-  --text-light: #FFFFFF;
-  --accent: #A0522D;
-}
-
-/* Main layout */
+/* Base styles */
 body {
   -webkit-font-smoothing: antialiased;
-  background-color: var(--beige-light);
+  background-color: rgba(255, 255, 255, 0.84);
 }
 
-/* Links styling */
+/* Links */
 a, a:hover {
   transition: none !important;
   text-decoration: none !important;
   text-transform: none !important;
-  color: var(--beige-dark);
 }
 
 /* Address block */
 .b-adress-block {
-  background-color: var(--text-light);
+  background-color: #fff;
   font-size: 14px;
-  color: var(--text-dark);
-  padding: 37px 35px;
+  color: #666;
+  padding: 37px 35px 37px 35px;
   text-align: center;
   margin-top: 33px;
   padding-top: 0;
   border-radius: 2px;
-  border-bottom: 2px solid var(--beige-medium);
+  border-bottom: 2px solid #e6e6e6;
 }
 
-/* Event header */
+.b-adress-block__adress {
+  margin-bottom: 14px;
+}
+
+.b-adress-block__adress span {
+  background-image: url('data:image/png;base64,...'); /* Base64 из оригинала */
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding-left: 10px;
+}
+
+/* Clock icon */
+.b-clock-icon {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-image: url('data:image/png;base64,...'); /* Base64 из оригинала */
+}
+
+/* Main content */
+.b-more, .b-main {
+  font-size: 14px;
+  text-align: left !important;
+}
+
 .b-event-header {
   font-size: 24px !important;
   margin-top: 10px !important;
   margin-bottom: 0 !important;
-  color: var(--text-dark);
+  color: #333;
   font-weight: bold;
   text-align: center;
 }
 
-/* Pro widget container */
+/* Feed type */
+.b-main_type_feed .b-pro-wiget {
+  margin-top: 10px;
+  border: none;
+}
+
+/* Widget container */
 .b-pro-wiget {
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 1px;
-  background-color: var(--text-light);
   margin-bottom: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Afisha styles */
+.b-aphisha {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  min-height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.b-aphisha:hover .b-aphisha__heading,
+.b-aphisha:focus .b-aphisha__heading {
+  opacity: .6;
+}
+
+.b-aphisha:hover .b-aphisha__background,
+.b-aphisha:focus .b-aphisha__background {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.b-aphisha.b-aphisha_single {
+  margin: 0 0 32px 0;
+}
+
+.b-aphisha__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 1s !important;
+}
+
+.b-aphisha__heading-container {
+  min-height: 200px;
+  background: rgba(0,0,0,.5);
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 200;
+}
+
+.b-aphisha__heading {
+  font-size: 22px;
+  line-height: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  padding: 20px;
+  position: absolute;
+  bottom: 10px;
+  transition: 1s !important;
+}
+
+/* Description */
+.b-description {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 20px 40px;
 }
 
 /* Header styles */
+.b-header {
+  overflow: hidden;
+}
+
 .b-header__main {
   float: right;
   position: relative;
-  background-color: var(--text-light);
+  background-color: #fff;
   border-radius: 2px;
-  border-bottom: 2px solid var(--beige-medium);
+  border-bottom: 2px solid #e6e6e6;
   padding: 0;
   text-align: center;
   width: 100%;
@@ -73,9 +160,70 @@ a, a:hover {
 .b-header__center {
   font-size: .85em !important;
   font-weight: bold;
-  color: var(--text-dark);
+  color: #333;
   text-align: center;
   height: 30px;
+}
+
+.b-header__center span {
+  line-height: 30px;
+  color: #666;
+  font-size: 14px;
+  font-weight: normal !important;
+  margin-left: 7px;
+  vertical-align: middle;
+}
+
+/* Footer styles */
+.b-footer {
+  box-sizing: border-box;
+  padding: 15px 0;
+  margin-bottom: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.b-footer a {
+  padding: 0 10px;
+  background-position: center;
+}
+
+.b-footer__branding {
+  display: inline-block;
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 12px;
+  line-height: 12px;
+  margin-top: 8px;
+}
+
+/* Buttons */
+.b-pro-wiget__button {
+  font-weight: bold;
+  background-color: #4a90e2;
+  text-decoration: none !important;
+  display: inline-block;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 3px;
+  line-height: 1;
+  font-family: "HelveticaNeue", HelveticaNeue, Arial, sans-serif;
+}
+
+.b-pro-wiget__button:hover {
+  background-color: #357abd !important;
+}
+
+.b-pro-wiget__button:active,
+.b-pro-wiget__button:focus {
+  background-color: #2a5f96 !important;
+  box-shadow: inset 0 0 7px 3px rgba(0, 0, 0, .3);
+}
+
+.b-pro-wiget__reg-button,
+.b-pro-wiget__pay-button {
+  font-size: 18px;
+  padding: 13px 17px;
 }
 
 /* Widget header */
@@ -83,139 +231,23 @@ a, a:hover {
   position: relative;
   padding: 15px 20px;
   min-height: 28px;
-  background-color: var(--beige-light);
+  background-color: #fff;
 }
 
 .b-widget-header__heading {
   font-size: 12px;
   line-height: 1.666em;
-  color: var(--text-dark);
+  color: #666;
 }
 
-/* Footer */
-.b-footer {
-  box-sizing: border-box;
-  padding: 15px 0;
-  margin-bottom: 10px;
-  background-color: var(--beige-light);
-  text-align: center;
-}
-
-/* Buttons */
-.b-pro-wiget__button {
-  font-weight: bold;
-  background-color: var(--beige-dark);
-  text-decoration: none !important;
-  display: inline-block;
-  border: none !important;
-  color: var(--text-light) !important;
-  border-radius: 3px;
-  line-height: 1;
-  font-family: "HelveticaNeue", HelveticaNeue, Arial, sans-serif;
-}
-
-.b-pro-wiget__button:hover {
-  background-color: var(--accent) !important;
-}
-
-.b-pro-wiget__reg-button, 
-.b-pro-wiget__pay-button {
-  font-size: 18px;
-  padding: 13px 17px;
-  background-color: var(--beige-dark);
-  color: var(--text-light);
-}
-
-/* More button */
-.b-pro-wiget__more-button {
-  border-radius: 3px;
-  display: inline-block;
-  line-height: 1;
-  margin-top: .8em;
-  padding: 7px 8px;
-  font-size: .85em;
-  color: var(--text-dark);
-  background-color: transparent;
-  border: 1px solid var(--beige-medium);
-}
-
-.b-pro-wiget__more-button:hover {
-  color: var(--text-light);
-  background-color: var(--beige-medium);
-  transition: .4s !important;
-}
-
-/* Description sections */
-.b-description {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 20px;
-  padding-bottom: 40px;
-  background-color: var(--text-light);
-}
-
-.b-short-description {
-  margin: 5px 0;
-  font-size: 12px;
-  line-height: 1.666em;
-  color: var(--text-dark);
-}
-
-/* Date display */
-.b-pro-wiget__date {
-  margin-top: -5px;
-  text-align: left;
-  font-size: .85em;
-  color: var(--text-dark);
-}
-
-/* No events message */
-.b-no-events {
-  border: 1px solid var(--beige-medium);
-  border-radius: 1px;
-  padding: 18px 0 105px;
-  position: relative;
-  font-size: 1em;
-  color: var(--text-dark);
-  text-align: center;
-  background-color: var(--text-light);
-}
-
-/* Strips and decorative elements */
-.b-header__strip-left,
-.b-header__strip-right {
-  min-height: 25px;
-  background-color: var(--beige-medium);
-}
-
-.b-footer__strip {
-  min-height: 25px;
-  text-align: center;
-  background-color: var(--beige-medium);
-}
-
-/* Branding */
-.b-footer__branding {
-  font-size: 12px;
-  line-height: 12px;
-  color: var(--beige-dark);
-}
-
-/* Hover effects */
-a:hover,
-.b-footer__branding:hover {
-  color: var(--accent);
-  opacity: 0.85;
-  transition: .2s !important;
-}
-
-/* responsive adjustments */
+/* Responsive adjustments can be added here */
 @media (max-width: 768px) {
-  .b-pro-wiget {
-    margin: 10px;
-  }
-  
   .b-description {
     padding: 15px;
+  }
+  
+  .b-pro-wiget__reg-button,
+  .b-pro-wiget__pay-button {
+    width: 100%;
   }
 }
