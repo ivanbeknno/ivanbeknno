@@ -6,6 +6,7 @@
   --accent-color: #4A90E2;            
   --primary-color: #E6D5AC;
   --secondary-color: #8B7355;
+  --container-bg-color: #111111;
   
   /* Text colors */
   --text-color: #333333;
@@ -25,6 +26,13 @@
   --border-color: #E5E5E5;
   --divider-color: #EEEEEE;
 }
+
+
+.b-main.b-main_type_feed {
+  width: 100%;
+  background-color: var(--container-bg-color);
+}
+
 
 /* Base styles */
 body {
