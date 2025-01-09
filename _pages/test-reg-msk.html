@@ -10,29 +10,18 @@ sitemap:
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, max-age=0, private, post-check=0, pre-check=0">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="-1">
-    <meta http-equiv="surrogate-control" content="no-store">
-    <meta http-equiv="cache-directive" content="no-cache">
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
     <script>
-        function doRedirect() {
-            const targetUrl = "{{ page.reg_msk_url }}?" + Date.now();
-            window.location.href = targetUrl;
-            // На случай если href не сработает
-            setTimeout(function() {
-                window.location.replace(targetUrl);
-            }, 100);
-        }
-        // Пытаемся редиректить сразу
-        doRedirect();
-        // И еще раз после загрузки страницы
-        window.onload = doRedirect;
+        // Сначала меняем текущий URL, чтобы сбросить кэш браузера
+        history.replaceState(null, '', window.location.href + '?t=' + Date.now());
+        // Затем делаем редирект
+        window.location.replace("{{ page.reg_msk_url }}" + '?t=' + Date.now());
     </script>
     <title>{{ page.title }}</title>
 </head>
 <body>
     <p>Перенаправление на страницу регистрации...</p>
-    <p>Если перенаправление не работает, <a href="{{ page.reg_msk_url }}" onclick="doRedirect(); return false;">нажмите сюда</a>.</p>
+    <p>Если перенаправление не работает, <a href="{{ page.reg_msk_url }}">нажмите сюда</a>.</p>
 </body>
 </html>
