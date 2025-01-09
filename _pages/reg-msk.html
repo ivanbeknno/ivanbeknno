@@ -10,18 +10,22 @@ sitemap:
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url={{ page.reg_msk_url }}">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <!-- Все полезные мета-теги против кэширования -->
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, max-age=0, private, post-check=0, pre-check=0">
     <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="0">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="surrogate-control" content="no-store">
+    <meta http-equiv="cache-directive" content="no-cache">
+
     <script>
-        location.replace("{{ page.reg_msk_url }}");
+        location.replace("{{ page.reg_msk_url }}?" + new Date().getTime());
     </script>
 
+    <meta http-equiv="refresh" content="0; {{ page.reg_msk_url }}">
     <title>Перенаправление на регистрацию (ближайшее мероприятие в Москве)</title>
 </head>
 <body>
     <p>Перенаправление на страницу регистрации...</p>
-    <p>Если перенаправление не работает, <a href="{{ page.reg_msk_url }}">нажмите сюда</a>.</p>
+    <p>Если перенаправление не работает, <a href="{{ page.reg_msk_url }}" id="manual-redirect">нажмите сюда</a>.</p>
 </body>
 </html>
