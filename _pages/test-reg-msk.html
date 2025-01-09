@@ -1,7 +1,7 @@
 ---
 title: Перенаправление на регистрацию (ближайшее мероприятие в Москве)
 layout: null
-reg_msk_url: "https://forms.gle/v8Vm6wjLfLHUzaLn6"
+reg_msk_url: "https://forms.gle/YzXPeakBfuh18nxT9"
 permalink: /test-reg-msk/
 published: true
 sitemap:
@@ -10,18 +10,22 @@ sitemap:
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <!-- Все полезные мета-теги против кэширования -->
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate, max-age=0, private, post-check=0, pre-check=0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta http-equiv="surrogate-control" content="no-store">
+    <meta http-equiv="cache-directive" content="no-cache">
+
     <script>
-        // Сначала меняем текущий URL, чтобы сбросить кэш браузера
-        history.replaceState(null, '', window.location.href + '?t=' + Date.now());
-        // Затем делаем редирект
-        window.location.replace("{{ page.reg_msk_url }}" + '?t=' + Date.now());
+        location.replace("{{ page.reg_msk_url }}?" + new Date().getTime());
     </script>
-    <title>{{ page.title }}</title>
+
+    <meta http-equiv="refresh" content="0; {{ page.reg_msk_url }}">
+    <title>Перенаправление на регистрацию (ближайшее мероприятие в Москве)</title>
 </head>
 <body>
     <p>Перенаправление на страницу регистрации...</p>
-    <p>Если перенаправление не работает, <a href="{{ page.reg_msk_url }}">нажмите сюда</a>.</p>
+    <p>Если перенаправление не работает, <a href="{{ page.reg_msk_url }}" id="manual-redirect">нажмите сюда</a>.</p>
 </body>
 </html>
