@@ -1,0 +1,6 @@
+name: Scheduled Site Build
+
+on:
+  schedule:
+    # Запускать каждый день в 16:30 UTC (19:30 MSK)
+    - cron: '30 16 * * *'
