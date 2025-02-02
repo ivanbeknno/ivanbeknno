@@ -2,5 +2,17 @@ name: Scheduled Site Build
 
 on:
   schedule:
-    # Запускать каждый день в 16:30 UTC (19:30 MSK)
+    # Запускать каждый день в 16:32 UTC (19:32 MSK)
     - cron: '32 16 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - name: Trigger rebuild
+        run: |
+          git commit --allow-empty -m "Scheduled rebuild trigger"
+          git push
