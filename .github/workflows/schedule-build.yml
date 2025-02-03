@@ -4,8 +4,8 @@ on:
   schedule:
     # Запускать в 16:32 UTC (19:32 MSK)
     - cron: '32 16 * * *'
-    # Запускать в 8:32 UTC (11:32 MSK)
-    - cron: '32 8 * * *'
+    # Запускать в 13:32 UTC (16:32 MSK)
+    - cron: '32 13 * * *'
 
 jobs:
   build:
@@ -14,17 +14,11 @@ jobs:
     steps:
       # Шаг 1: Клонировать репозиторий
       - uses: actions/checkout@v4
-        with:
-          ref: gh-pages  # Используем ветку gh-pages
 
-      # Шаг 2: Настроить Git-параметры
-      - name: Configure Git
+      # Шаг 2: Триггер пересборки через API
+      - name: Trigger GitHub Pages rebuild
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-
-      # Шаг 3: Создать пустой коммит с временной меткой
-      - name: Trigger rebuild
-        run: |
-          git commit --allow-empty -m "Scheduled rebuild trigger at $(date -u)"
-          git push origin gh-pages
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds
