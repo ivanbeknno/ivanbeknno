@@ -6,23 +6,49 @@ sitemap:
 ---
 <hr>
 <div class="archive tag-master">
-	<div class="post-list article-list">
-	{% for post in site.posts limit: 10 %}
-		<div class="post">
-			<h2><a class="post-list-title article-list" href="{{ post.url }}">{{ post.title }}</a></h2>
-      <div class="post-content">
+  <div class="post-list article-list">
+    {% for post in site.posts limit: 10 %}
+      <div class="post">
+        <h2><a class="post-list-title article-list" href="{{ post.url }}">{{ post.title }}</a></h2>
+        <div class="post-content">
           {{ post.content }}
+        </div>
+        <p style="white-space: nowrap">
+          <small>
+            {{post.date | date: '%B %d, %Y'}};
+            <a href="https://t.me/IvanBekRu" target="_blank" rel="noopener noreferrer"> 📱 Telegram канал</a>,
+            <a class="js-copy-url" data-clipboard-text="{{ site.url }}{{ post.url }}">🔗 Копировать ссылку</a>
+          </small>
+        </p>
+        <hr>
       </div>
-      <p style="white-space: nowrap"><small>
-        {{post.date | date: '%B %d, %Y'}};
-        <a href="https://t.me/IvanBekRu" target="_blank" rel="noopener noreferrer"> 📱 Telegram канал</a>,
-        <a href="{{site.baseurl}}/feed.atom" title="{{site.baseurl}}/feed.atom" >Atom</a>
-      </small></p>
-      <hr>
-		</div>
-	{% endfor %}
-	</div>
+    {% endfor %}
+  </div>
 </div>
+
+<style>
+  /* Изменения в стиле */
+  .copy-notification {
+    position: absolute;
+    bottom: 100%; /* Размещаем над элементом */
+    left: 0;
+    color: #AA336A;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap; /* Чтобы текст не переносился */
+  }
+  .copy-notification.visible {
+    opacity: 1;
+  }
+  /* Добавляем относительное позиционирование для родительского элемента */
+  .js-copy-url {
+    position: relative;
+    display: inline-block;
+  }
+</style>
+
 <script src="{{site.baseurl}}/assets/js/jquery-3.2.1.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/infinite-jekyll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
 <div class="infinite-spinner"></div>

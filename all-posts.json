@@ -6,7 +6,10 @@ sitemap:
 {
   "posts" : [
     {% for post in site.posts %}
-    "{{ post.url }}"{% unless forloop.last %},{% endunless %}
+    {
+      "url": "{{ post.url }}",
+      "date": "{{ post.date | date: '%B %d, %Y' }}"
+    }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
 }

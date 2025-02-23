@@ -1,12 +1,40 @@
 $(function() {
-
   var postURLs,
       isFetchingPosts = false,
       shouldFetchPosts = true;
 
+  // Инициализация Clipboard.js один раз для всех элементов
+  var clipboard = new ClipboardJS('.js-copy-url');
+
+  clipboard.on('success', function(e) {
+    // Найти или создать уведомление
+    var notification = e.trigger.querySelector('.copy-notification');
+    if (!notification) {
+      notification = document.createElement('span');
+      notification.className = 'copy-notification';
+      notification.textContent = 'Скопировано!';
+      e.trigger.appendChild(notification);
+    }
+
+    // Показать уведомление
+    notification.classList.add('visible');
+
+    // Скрыть через 2 секунды
+    setTimeout(function() {
+      notification.classList.remove('visible');
+    }, 2000);
+
+    e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+    console.error('Ошибка при копировании:', e.action);
+  });
+
   // Load the JSON file containing all URLs
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
+
   // If a tag was passed as a url parameter then use it to filter the urls
   if (urlParams.has('tag')){
     const tag = urlParams.get('tag');
@@ -16,7 +44,7 @@ $(function() {
         postURLs = tag_item["posts"];
         // If there aren't any more posts available to load than already visible, disable fetching
         if (postURLs.length <= postsToLoad)
-        disableFetching();
+          disableFetching();
     });
   } else {
       $.getJSON('/all-posts.json', function(data) {
@@ -37,14 +65,9 @@ $(function() {
   // Are we close to the end of the page? If we are, load more posts
   $(window).scroll(function(e){
     if (!shouldFetchPosts || isFetchingPosts) return;
-    /*var windowHeight = $(window).height(),
-        windowScrollPosition = $(window).scrollTop(),
-        bottomScrollPosition = windowHeight + windowScrollPosition,
-        documentHeight = $(document).height();*/
-    var fetch = ( $(window).scrollTop() + $(window).height() ) > ( $(document).height() - ($(window).height() / 2) )
 
-    //console.log($(window).scrollTop() + window.innerHeight, $(document).height(), window.innerHeight);
-    //$(window).scrollTop() + window.innerHeight == $(document).height()
+    var fetch = ( $(window).scrollTop() + $(window).height() ) >
+                ( $(document).height() - ($(window).height() / 2) );
 
     // If we've scrolled past the loadNewPostsThreshold, fetch posts
     if (fetch) {
@@ -83,10 +106,30 @@ $(function() {
   }
 
   function fetchPostWithIndex(index, callback) {
-    var postURL = postURLs[index];
+    var postData = postURLs[index];
 
-    $.get(postURL, function(data) {
-      $(data).find(".post").appendTo(".tag-master:not(.hidden) .post-list");
+    $.get(postData.url, function(data) {
+      var $tempContainer = $('<div></div>').html(data);
+      var $post = $tempContainer.find(".post");
+
+      var $dateContainer = $post.find('p small');
+      if ($dateContainer.length === 0) {
+        $dateContainer = $('<p style="white-space: nowrap"><small></small></p>');
+      }
+
+      var dateText = postData.date;
+      $dateContainer.find('small').html(
+        dateText + '; ' +
+        '<a href="https://t.me/IvanBekRu" target="_blank" rel="noopener noreferrer"> 📱 Telegram канал</a>, ' +
+        '<a class="js-copy-url" data-clipboard-text="' + window.location.origin + postData.url + '">🔗 Копировать ссылку</a>'
+      );
+
+      // Вставляем дату перед hr
+      $post.find('hr').before($dateContainer);
+
+      // Добавляем пост на страницу
+      $post.appendTo(".tag-master:not(.hidden) .post-list");
+
       callback();
     });
   }
@@ -96,5 +139,4 @@ $(function() {
     isFetchingPosts = false;
     $(".infinite-spinner").fadeOut();
   }
-
 });
