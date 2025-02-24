@@ -13,10 +13,11 @@ sitemap:
         <div class="post-content">
           {{ post.content }}
         </div>
-        <p style="white-space: nowrap">
+        <p style="display: flex; justify-content: space-between; align-items: center">
           <small>
-            {{post.date | date: '%B %d, %Y'}};
-            <a href="https://t.me/IvanBekRu" target="_blank" rel="noopener noreferrer"> 📱 Telegram канал</a>,
+            {{post.date | date: '%B %d, %Y'}}
+          </small>
+          <small>
             <a class="js-copy-url" data-clipboard-text="{{ site.url }}{{ post.url }}">🔗 Копировать ссылку</a>
           </small>
         </p>
