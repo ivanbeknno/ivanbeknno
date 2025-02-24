@@ -114,15 +114,20 @@ $(function() {
 
       var $dateContainer = $post.find('p small');
       if ($dateContainer.length === 0) {
-        $dateContainer = $('<p style="white-space: nowrap"><small></small></p>');
+          $dateContainer = $('<p style="display: flex; justify-content: space-between; align-items: center"></p>');
       }
-
       var dateText = postData.date;
-      $dateContainer.find('small').html(
-        dateText + '; ' +
-        '<a href="https://t.me/IvanBekRu" target="_blank" rel="noopener noreferrer"> 📱 Telegram канал</a>, ' +
-        '<a class="js-copy-url" data-clipboard-text="' + window.location.origin + postData.url + '">🔗 Копировать ссылку</a>'
+
+      // Создаем два отдельных small элемента
+      var $leftSmall = $('<small></small>').text(dateText);
+      var $rightSmall = $('<small></small>').html(
+          '<a class="js-copy-url" data-clipboard-text="' + window.location.origin + postData.url + '">🔗 Копировать ссылку</a>'
       );
+
+      // Очищаем и добавляем новые элементы в контейнер
+      $dateContainer.empty()
+          .append($leftSmall)
+          .append($rightSmall);
 
       // Вставляем дату перед hr
       $post.find('hr').before($dateContainer);
