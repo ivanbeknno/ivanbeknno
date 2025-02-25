@@ -1,71 +1,83 @@
----
-layout: null
----
 <!DOCTYPE html>
-<html lang="ru" prefix="og: http://ogp.me/ns#">
-
-    <head>
-        {% if page.sitemap.exclude == "yes" %}<meta name="robots" content="noindex">{% endif %}
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1" name="viewport">
-
-        {% seo %}
-
-        <meta property="og:image" content="{{site.url}}/assets/images/profile.jpg">
-        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-
-        {% include favicon.html %}
-
-        {% include mathjax.html %}
-
-        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
-        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
-
-        <style>
-          span.rev { unicode-bidi:bidi-override; direction:rtl }
-          span.rev.surname:before { content:"вен" }
-          span.rev.surname:after { content:"кеБ" }
-          span.rev.firstname:before { content:"н" }
-          span.rev.firstname:after { content:"вИ" }
-        </style>
-
-    </head>
-
-    <body>
-
-      <h1 class="site-headline">{{site.title}}</h1>
-
-      <br>
-
-      <!-- <h3 class="post-description">{{site.description}}</h3> -->
-
-      {% include navigation.html %}
-
-        <main>
-            <article>
-                {{ content }}
-            </article>
-        </main>
-
-       {% include contacts.html %}
-
-        <footer>
-          <p class="copy">
-            <small> &copy; {{site.title}} {{ site.time | date: '%Y' }}
-                    | Powered by
-                    <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>
-                    and
-                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/">Gradfolio</a>.
-                    Last updated on {{ site.time | date_to_long_string }}
-            </small>
-          </p>
-
-        {% include social-footer.html %}
-
-        </footer>
-
-        {% include analytics.html %}
-
-    </body>
-
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body class="{% if page.layout == 'home' %}archive-view{% endif %}">
+  <div id="flex-container" class="{% if page.layout == 'home' %}archive-view{% endif %}">
+    <div id="sidebar">
+      <div id="header-border"></div>
+      
+      <div id="header-top">
+        <a class="logo" href="{{ site.baseurl }}/">
+          <img class="logo-img" src="{{ '/assets/images/logo.webp' | relative_url }}" alt="{{ site.title }}"/>
+          <div class="logo-title">
+            <!-- SVG или текст с названием сайта -->
+            <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.33 98.31">
+              <!-- Содержимое SVG -->
+            </svg>
+          </div>
+        </a>
+        
+        <div class="mobile-actions">
+          <a id="menu-alert">
+            <!-- SVG для уведомлений -->
+          </a>
+          <a id="menu-open">
+            <!-- SVG для открытия меню -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1150 949 28 17">
+              <g transform="translate(-1478 917)">
+                <rect width="28" height="3" transform="translate(328 32)"/>
+                <rect width="28" height="3" transform="translate(328 39)"/>
+                <rect width="28" height="3" transform="translate(328 46)"/>
+              </g>
+            </svg>
+          </a>
+          <a id="menu-close">
+            <!-- SVG для закрытия меню -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1255 1000 21.92 21.92">
+              <g transform="translate(-3209.04 896.46)">
+                <rect width="28" height="3" transform="translate(1956.161 103.54) rotate(45)"/>
+                <rect width="28" height="3" transform="translate(1954.04 123.339) rotate(-45)"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <section class="sidebar-content">
+        {% include sidebar.html %}
+      </section>
+    </div>
+    
+    <div id="content-container">
+      {{ content }}
+    </div>
+  </div>
+  
+  <script>
+    // Скрипт для мобильного меню
+    document.addEventListener('DOMContentLoaded', function() {
+      var menuOpen = document.getElementById('menu-open');
+      var menuClose = document.getElementById('menu-close');
+      
+      if (menuOpen && menuClose) {
+        menuOpen.addEventListener('click', function() {
+          document.body.classList.add('menu-open');
+        });
+        
+        menuClose.addEventListener('click', function() {
+          document.body.classList.remove('menu-open');
+        });
+      }
+      
+      // Обработка изменения размера окна
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          document.body.classList.remove('menu-open');
+        }
+      });
+    });
+  </script>
+</body>
 </html>

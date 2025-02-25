@@ -1,0 +1,174 @@
+// Адаптивные стили для больших экранов
+@media (max-width: $breakpoint-large) {
+    #content-container {
+      padding: 0 $content-padding-medium;
+    }
+  }
+  
+  // Средние экраны
+  @media (max-width: $breakpoint-medium) {
+    #content-container {
+      padding: 0 $content-padding-medium;
+    }
+  }
+  
+  // Важно: показывать сайдбар на больших экранах всегда
+  @media (min-width: $breakpoint-tablet + 1) {
+    .sidebar-content {
+      display: block !important;
+    }
+  }
+  
+  // Планшеты и мобильные - критическое изменение макета
+  @media (max-width: $breakpoint-tablet) {
+    // Сайдбар превращается в верхнюю панель
+    #sidebar {
+      position: fixed;
+      top: 0;
+      bottom: auto;
+      left: 0;
+      width: 100%;
+      min-height: $mobile-header-height;
+      border-right: none;
+      background-color: $white;
+      z-index: 10;
+      overflow-y: visible;
+      
+      // При открытии меню
+      body.menu-open & {
+        height: 100vh;
+        overflow-y: auto;
+      }
+    }
+  
+    // Верхняя часть - шапка сайта
+    #header-top {
+      display: block;
+      overflow: auto;
+      text-decoration: none;
+      padding: 8px 15px 7px;
+      margin-bottom: 15px;
+    }
+  
+    // Уменьшаем логотип
+    .logo {
+      &-img {
+        width: $logo-size-mobile;
+        margin-top: $mobile-logo-top;
+        margin-left: 0;
+        margin-right: 15px;
+      }
+  
+      &-title {
+        margin-top: 15px;
+      }
+    }
+  
+    // Показываем мобильные кнопки
+    .mobile-actions {
+      display: block;
+    }
+  
+    // Сначала скрываем содержимое сайдбара
+    .sidebar-content {
+      display: none;
+      width: 100%;
+      height: calc(100vh - #{$mobile-header-height});
+      padding-top: 30px;
+      overflow-y: auto;
+      padding-bottom: 200px;
+    }
+  
+    // Оранжевая полоса меняет позицию
+    #header-border {
+      top: $mobile-header-height - 15px;
+      border-top: 1px solid black;
+      min-height: 7px;
+      background-color: $dark-orange;
+      border-bottom: 7px solid $light-orange;
+    }
+  
+    // Основной контент начинается ниже шапки
+    #content-container {
+      width: 100%;
+      margin-top: $mobile-header-height;
+      margin-left: 0px;
+      padding: 0 40px;
+    }
+    
+    // Стили для открытого меню
+    body.menu-open {
+      overflow: hidden;
+      
+      .sidebar-content {
+        display: block;
+      }
+      
+      #menu-alert {
+        display: none !important;
+      }
+      
+      #menu-close {
+        display: block;
+      }
+      
+      #menu-open {
+        display: none;
+      }
+    }
+    
+    // Увеличиваем размер шрифтов сайдбара на мобильных
+    .sidebar-widget {
+      .widgettitle {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      
+      li {
+        margin-bottom: 10px;
+        
+        a {
+          font-size: 17px;
+        }
+      }
+    }
+    
+    // Увеличиваем размер полей ввода
+    input#s,
+    input.feedblitz-email {
+      height: 40px;
+      font-size: 15px;
+      padding: 5px 10px;
+    }
+    
+    #searchsubmit,
+    input.feedblitz-email-submit {
+      height: 40px;
+      font-size: 15px;
+    }
+  }
+  
+  // Мобильные телефоны
+  @media (max-width: $breakpoint-mobile) {
+    #content-container {
+      padding: 0 $content-padding-small;
+    }
+    
+    .pagination {
+      a, span {
+        padding: 3px 6px;
+        margin: 0 2px;
+      }
+    }
+  }
+  
+  // Маленькие телефоны
+  @media (max-width: $breakpoint-small) {
+    a.logo {
+      max-width: 80%;
+    }
+  
+    .logo-title {
+      max-width: 60%;
+    }
+  }

@@ -1,0 +1,306 @@
+// Typography styles for Seth Godin theme
+// Based on PT Serif for body text and Source Sans Pro for headings
+
+// Font families
+$font-heading: "Source Sans Pro", sans-serif;
+$font-body: "PT Serif", serif;
+
+// Base text styles
+body {
+  font-family: $font-body;
+  font-size: 100%;
+  line-height: 1.6;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+// Input field styles
+input, button, textarea, select, label {
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  font-family: $font-heading;
+}
+
+button {
+  font-size: 0.75em;
+  cursor: pointer;
+}
+
+// Heading styles
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  word-spacing: 0.05em;
+  line-height: 1.1em;
+}
+
+h1 {
+  // Specific styles for h1
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  
+  a {
+    &:link, &:visited {
+      text-decoration: none;
+      color: black;
+    }
+    
+    &:hover, &:active {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+  
+  & + .search-form,
+  & + .subscribe-form {
+    margin-top: 1em;
+  }
+}
+
+h3 {
+  font-size: 1.4em;
+  margin-top: 1.4em;
+  margin-top: 0;
+  margin-bottom: 0;
+  
+  a {
+    &:link, &:visited {
+      text-decoration: none;
+      color: black;
+    }
+    
+    &:hover, &:active {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+  
+  & + ul,
+  & + ol {
+    padding-top: 0.4em;
+  }
+}
+
+h4, h5, h6 {
+  a {
+    &:link, &:visited {
+      text-decoration: none;
+      color: black;
+    }
+    
+    &:hover, &:active {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}
+
+// Paragraph styles
+p {
+  font-family: $font-body;
+  font-size: 1.1em;
+  margin: 1.1em 0;
+  color: #2c3e50;
+}
+
+// List styles
+li {
+  font-family: $font-body;
+  font-size: 1.1em;
+  line-height: 1.45;
+  margin-bottom: 0.8em;
+  color: #2c3e50;
+  
+  li {
+    font-size: inherit;
+  }
+}
+
+ul, ol {
+  font-family: $font-body;
+  margin-left: 0;
+  
+  li {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
+
+.unstyled-list li {
+  list-style: none;
+}
+
+// TOC styles
+.toc {
+  font-family: $font-heading;
+  letter-spacing: -0.02em;
+  word-spacing: 0.05em;
+  line-height: 1.1em;
+  
+  li {
+    font-family: $font-heading;
+    letter-spacing: -0.02em;
+    word-spacing: 0.05em;
+    line-height: 1.1em;
+    margin: 0;
+    margin-bottom: 0.25em;
+    
+    a {
+      font-family: $font-heading;
+      letter-spacing: -0.02em;
+      word-spacing: 0.05em;
+      line-height: 1.1em;
+    }
+  }
+  
+  a {
+    &:link, &:visited {
+      text-decoration: none;
+      color: black;
+    }
+    
+    &:hover, &:active {
+      text-decoration: none;
+      color: #ffb900;
+    }
+  }
+}
+
+// Link styles
+a {
+  color: #003eff;
+  text-decoration: none;
+  cursor: pointer;
+  
+  &:link {
+    color: #003eff;
+    text-decoration: none;
+  }
+  
+  &:visited {
+    color: #9709b2;
+    text-decoration: none;
+  }
+  
+  &:hover {
+    color: #003eff;
+    text-decoration: underline;
+  }
+  
+  &:active {
+    color: #003eff;
+    text-decoration: underline;
+  }
+}
+
+// Evergreen links (special case)
+a.evergreen {
+  &:visited {
+    color: #ffb900;
+  }
+  
+  &:hover, &:active {
+    color: black;
+  }
+}
+
+// Byline styles
+.byline {
+  font-family: $font-heading;
+  border-top: 1px solid black;
+  width: 100%;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: black;
+  
+  .date {
+    text-transform: uppercase;
+    line-height: 1.75;
+  }
+  
+  .author a {
+    text-transform: uppercase;
+    line-height: 1.75;
+  }
+  
+  .search-text {
+    text-transform: uppercase;
+    line-height: 1.75;
+    text-transform: none;
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+  
+  a {
+    &:link, &:visited {
+      text-decoration: underline;
+    }
+    
+    &:hover, &:active {
+      color: black;
+    }
+  }
+}
+
+.byline.search-byline {
+  margin: 30px 0;
+  line-height: 1.25;
+  padding-top: 5px;
+}
+
+// Post type header
+.post-type-header {
+  color: #ffb900;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  display: block;
+  padding-bottom: 0px;
+  
+  a {
+    color: #ffb900 !important;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Media queries for larger screens
+@media (min-width: 640px) {
+  body {
+    line-height: 1.55;
+  }
+  
+  h2 {
+    font-size: 2.2em;
+  }
+}
+
+// Search results
+.search-results {
+  font-size: 15px;
+  font-family: Source Sans Pro, Regular;
+  
+  h2 {
+    font-size: 15px;
+    
+    & + p {
+      margin-top: 0.1em;
+    }
+  }
+  
+  p {
+    font-size: 15px;
+    font-family: Source Sans Pro, Regular;
+  }
+}
+
+// Highlighted text
+mark {
+  background-color: #ffb900;
+}
