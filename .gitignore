@@ -11,3 +11,5 @@ __new-posts/queue
 /python
 *.log
 *.py
+/__new-posts/
+/test.html
