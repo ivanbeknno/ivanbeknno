@@ -42,7 +42,7 @@ h1 {
 h2 {
   font-size: 1.8em;
   margin-top: 1em;
-  margin-bottom: 0;
+  margin-bottom: 0.5em !important; // Изменено с 0 на 0.5em для лучшего отступа
   
   a {
     &:link, &:visited {
@@ -124,10 +124,11 @@ li {
 ul, ol {
   font-family: $font-body;
   margin-left: 0;
+  padding-left: 2em !important; // Добавлен стандартный отступ для списков
   
   li {
     padding-left: 0;
-    margin-left: 0;
+    margin-left: 0; // ???
   }
 }
 

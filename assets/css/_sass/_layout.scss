@@ -40,7 +40,7 @@ img {
 
 // Основной контейнер контента
 #content-container {
-  width: calc(100% - #{$sidebar-width});
+  // width: calc(100% - #{$sidebar-width}); // c этой штукой контент оказывается в середине сранице (отделяется от sidebar'a)
   margin-left: $sidebar-width;
   padding: 0 $content-padding-large;
   
@@ -61,9 +61,9 @@ img {
     }
   }
   
-  .article-list {
-    max-width: $post-max-width;
-    margin: 0 auto;
+  .article-list, .post-list, .post-list.article-list {
+    max-width: $post-max-width !important;
+    margin: 0 auto !important;
     
     h2 {
       margin-top: 5px;
