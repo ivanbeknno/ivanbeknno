@@ -8,7 +8,7 @@ $font-body: "PT Serif", serif;
 // Base text styles
 body {
   font-family: $font-body;
-  font-size: 100%;
+  font-size: $font-size-base;
   line-height: 1.6;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: $font-size-h2;
   margin-top: 1em;
   margin-bottom: 0.5em !important; // Изменено с 0 на 0.5em для лучшего отступа
   
@@ -63,7 +63,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: $font-size-h3;
   margin-top: 1.4em;
   margin-top: 0;
   margin-bottom: 0;
@@ -103,7 +103,7 @@ h4, h5, h6 {
 // Paragraph styles
 p {
   font-family: $font-body;
-  font-size: 1.1em;
+  font-size: $font-size-large;
   margin: 1.1em 0;
   color: #2c3e50;
 }
@@ -111,7 +111,7 @@ p {
 // List styles
 li {
   font-family: $font-body;
-  font-size: 1.1em;
+  font-size: $font-size-large;
   line-height: 1.45;
   margin-bottom: 0.8em;
   color: #2c3e50;
@@ -119,6 +119,10 @@ li {
   li {
     font-size: inherit;
   }
+}
+
+li p {
+  font-size: inherit;
 }
 
 ul, ol {
@@ -215,7 +219,7 @@ a.evergreen {
   font-family: $font-heading;
   border-top: 1px solid black;
   width: 100%;
-  font-size: 0.8em;
+  font-size: $font-size-small;
   font-weight: 600;
   color: black;
   
@@ -257,7 +261,7 @@ a.evergreen {
 // Post type header
 .post-type-header {
   color: #ffb900;
-  font-size: 0.8em;
+  font-size: $font-size-small;
   text-transform: uppercase;
   display: block;
   padding-bottom: 0px;

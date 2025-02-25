@@ -31,3 +31,13 @@ $breakpoint-medium: 900px;
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 600px;
 $breakpoint-small: 350px;
+
+// Базовые размеры шрифтов
+$font-size-base: 1.1em;      // Базовый размер (вместо 100%)
+$font-size-large: 1.3em;    // Для p и li
+$font-size-h2: 1.8em;       // Для h2
+$font-size-h3: 1.4em;       // Для h3
+$font-size-small: 1.1em;    // Для .byline
+$font-size-sidebar-title: 16px;   // Для заголовков в сайдбаре
+$font-size-sidebar-link: 15px;    // Для ссылок в сайдбаре
+$font-size-form: 14px;      // Для полей форм
