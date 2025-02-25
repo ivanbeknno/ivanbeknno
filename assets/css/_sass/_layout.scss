@@ -1,135 +1,135 @@
 // Основной контейнер
 html {
-    box-sizing: border-box;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: $white;
-  }
-  
-  * {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+}
+
+* {
+  box-sizing: inherit;
+  &:before, &:after {
     box-sizing: inherit;
-    &:before, &:after {
-      box-sizing: inherit;
-    }
+  }
+}
+
+body {
+  height: 100%;
+  font-family: $font-body;
+  font-size: 100%;
+  line-height: 1.6;
+  margin: 0;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Flex контейнер для основного макета
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  
+  &.archive-view {
+    // Специфические стили для архивного вида
+  }
+}
+
+// Основной контейнер контента
+#content-container {
+  width: calc(100% - #{$sidebar-width});
+  margin-left: $sidebar-width;
+  padding: 0 $content-padding-large;
+  
+  .wrapper {
+    margin-left: 0;
+    margin-right: auto;
   }
   
-  body {
-    height: 100%;
-    font-family: $font-body;
-    font-size: 100%;
-    line-height: 1.6;
-    margin: 0;
-    font-kerning: normal;
-    text-rendering: optimizeLegibility;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  // Flex контейнер для основного макета
-  #flex-container {
-    display: flex;
-    flex-direction: row;
-    
-    &.archive-view {
-      // Специфические стили для архивного вида
-    }
-  }
-  
-  // Основной контейнер контента
-  #content-container {
-    width: calc(100% - #{$sidebar-width});
-    margin-left: $sidebar-width;
-    padding: 0 $content-padding-large;
-    
-    .wrapper {
-      margin-left: 0;
-      margin-right: auto;
-    }
-    
-    .post {
-      max-width: $post-max-width;
-      margin: 0 auto;
-      padding-bottom: 35px;
-      padding-top: 30px;
-      clear: both;
-      
-      h2 {
-        margin-top: 5px;
-      }
-    }
-    
-    .article-list {
-      max-width: $post-max-width;
-      margin: 0 auto;
-      
-      h2 {
-        margin-top: 5px;
-      }
-      
-      hr {
-        border: none;
-        border-top: 1px solid $super-light-gray;
-        margin: 20px 0;
-      }
-    }
-  }
-  
-  // Стили для одиночного поста
-  .post.single {
-    border-bottom: none;
-    padding-bottom: 35px;
-    
-    .byline {
-      display: inline-block;
-    }
-  }
-  
-  // Стиль для линии даты под постом
-  .byline {
-    font-family: $font-heading;
-    border-top: 1px solid black;
-    width: 100%;
-    font-size: 0.8em;
-    font-weight: 600;
-    color: black;
-    
-    .date {
-      text-transform: uppercase;
-      line-height: 1.75;
-    }
-  }
-  
-  // Пагинация
-  .pagination {
+  .post {
     max-width: $post-max-width;
-    margin: 30px auto;
-    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 35px;
+    padding-top: 30px;
+    clear: both;
     
-    a, span {
-      margin: 0 5px;
-      display: inline-block;
-      padding: 5px 10px;
-    }
-    
-    a {
-      color: $dark-blue-gray;
-      text-decoration: none;
-      
-      &:hover {
-        color: $dark-orange;
-        text-decoration: underline;
-      }
-    }
-    
-    span {
-      color: $light-gray;
+    h2 {
+      margin-top: 5px;
     }
   }
   
-  // Вспомогательные классы
-  .clearfix {
-    clear: both;
+  .article-list {
+    max-width: $post-max-width;
+    margin: 0 auto;
+    
+    h2 {
+      margin-top: 5px;
+    }
+    
+    hr {
+      border: none;
+      border-top: 1px solid $super-light-gray;
+      margin: 20px 0;
+    }
   }
+}
+
+// Стили для одиночного поста
+.post.single {
+  border-bottom: none;
+  padding-bottom: 35px;
+  
+  .byline {
+    display: inline-block;
+  }
+}
+
+// Стиль для линии даты под постом
+.byline {
+  font-family: $font-heading;
+  border-top: 1px solid black;
+  width: 100%;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: black;
+  
+  .date {
+    text-transform: uppercase;
+    line-height: 1.75;
+  }
+}
+
+// Пагинация
+.pagination {
+  max-width: $post-max-width;
+  margin: 30px auto;
+  text-align: center;
+  
+  a, span {
+    margin: 0 5px;
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  
+  a {
+    color: $dark-blue-gray;
+    text-decoration: none;
+    
+    &:hover {
+      color: $dark-orange;
+      text-decoration: underline;
+    }
+  }
+  
+  span {
+    color: $light-gray;
+  }
+}
+
+// Вспомогательные классы
+.clearfix {
+  clear: both;
+}
